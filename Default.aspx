@@ -4,20 +4,27 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Tip Calculator</title>
+    <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <h1>Tip Calculator</h1>
     <div>
-        <p> Enter the meal amount <asp:TextBox ID="MealTextBox" runat="server"></asp:TextBox></p>
-        <p>Choose your tip percent</p>
-        <asp:RadioButtonList ID="TipPercentRadioButtonList1" runat="server"></asp:RadioButtonList>
-        <asp:TextBox ID="OtherTextBox" runat="server"></asp:TextBox>
-        <asp:Button ID="SubmitButton" runat="server" Text="Submit" OnClick="SubmitButton_Click" />
-        <p>
-            <asp:Label ID="ResultLabel" runat="server" Text="Label"></asp:Label></p>
-
+        <h1> Log In</h1>
+        <table>
+            <tr>
+                <td> User Name</td>
+                <td><asp:TextBox ID="UserTextBox" runat="server"></asp:TextBox></td>
+            </tr>
+            <tr>
+                <td> Password </td>
+                <td><asp:TextBox ID="PasswordTextBox" runat="server" TextMode="Password"></asp:TextBox></td>
+            </tr>
+            <tr>
+                <td><asp:Button ID="LoginButton" runat="server" Text="Log In" OnClick="LoginButton_Click" /></td>
+                <td><asp:Label ID="ResultLabel" runat="server" Text=""></asp:Label></td>
+            </tr>
+        </table>
+    
     </div>
     </form>
 </body>

@@ -9,52 +9,26 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
-        {
-            string[] percents = { "10%", "15%", "20%", "Other"};
-            TipPercentRadioButtonList1.DataSource = percents;
-            TipPercentRadioButtonList1.DataBind();
-        }
+
     }
 
-    protected void SubmitButton_Click(object sender, EventArgs e)
+    protected void LoginButton_Click(object sender, EventArgs e)
     {
-        GetTotals();
-    }
-
-    private void GetTotals()
-    {
-        double amount;
-        Tip tip = null;
-        bool goodAmount = double.TryParse(MealTextBox.Text, out amount);
-        if (goodAmount)
+        int key = 0;
+        BookReviewDbEntities db = new BookReviewDbEntities();
+        int success = db.usp_ReviewerLogin(UserTextBox.Text, PasswordTextBox.Text);
+        if (success != -1)
         {
-            double percent = 0;
-            if (TipPercentRadioButtonList1.SelectedItem.Text != "Other")
-            {
-                if (TipPercentRadioButtonList1.SelectedItem.Text.Equals("10%"))
-                    percent = .1;
-                if (TipPercentRadioButtonList1.SelectedItem.Text.Equals("15%"))
-                    percent = .15;
-                if (TipPercentRadioButtonList1.SelectedItem.Text.Equals("20%"))
-                    percent = .2;
-            }
-            else
-            {
-                percent = double.Parse(OtherTextBox.Text);
-                percent /= 100;
-            }
+            var uKey = (from k in db.Reviewers
+                        where k.ReviewerUserName.Equals(UserTextBox.Text)
+                        select k.ReviewerKey).FirstOrDefault();
 
-            tip = new Tip(amount, percent);
-        }
-        else
+            key = (int)uKey;
+            Session["userKey"] = key;
+            ResultLabel.Text = "Welcome";
+        } else
         {
-            Response.Write("<script>alert('Enter a valiable number');</script>");
+            ResultLabel.Text = "Invalid Login";
         }
-
-        ResultLabel.Text = "Amount: " + amount + "</br>" + "Tax: "
-            + tip.CalculateTax().ToString("$ #,##0.00") + "</br>"
-            + "Tip: " + tip.CalculateTip().ToString("$ #,##0.00") + "</br>"
-            + "Total: " + tip.Total().ToString("$ #,##0.00");
     }
 }
