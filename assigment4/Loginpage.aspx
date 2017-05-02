@@ -20,14 +20,20 @@
             <tr>
                 <td>Password</td>
                 <td>
-                    <asp:TextBox ID="PasswordTextBox" runat="server"></asp:TextBox> </td>
+                    <asp:TextBox ID="PasswordTextBox" runat="server" TextMode="Password"></asp:TextBox> </td>
             </tr>
             <tr>
                 <td>
                     <asp:Button ID="LoginButton" runat="server" Text="Log In" OnClick="LoginButton_Click" /></td>
                
             </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="ResultLabel" runat="server" Text=""></asp:Label></td>
+            </tr>
         </table>
+
+        <asp:LinkButton ID="RegisterLinkButton" runat="server" OnClick="RegisterLinkButton_Click">Register</asp:LinkButton>
     
     </div>
     </form>

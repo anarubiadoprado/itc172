@@ -20,15 +20,21 @@ public partial class Loginpage : System.Web.UI.Page
         if (success != -1)
         {
             var uKey = (from k in db.People
-                        where k.PersonEmail.Equals(UserTextBox)
+                        where k.PersonEmail.Equals(UserTextBox.Text)
                         select k.PersonKey).FirstOrDefault();
 
             key = (int)uKey;
             Session["PersonKey"] = key;
-            Response.Redirect("Donation.aspx");
+            Response.Redirect("Donation1.aspx");
+
         }else
         {
-            Response.Redirect("Register.aspx");
+            ResultLabel.Text = "Invalid Login. You should register first.";
         }
+    }
+
+    protected void RegisterLinkButton_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Register.aspx");
     }
 }

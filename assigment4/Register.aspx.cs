@@ -18,12 +18,22 @@ public partial class Register : System.Web.UI.Page
         string firstname = FirstNameTextBox.Text;
         string lastname = LastNameTextBox.Text;
         string password = ConfirmPasswordTextBox.Text;
+        string apartmentNumber = ApartmentNumberTextBox.Text;
+        string street = StreetTextBox.Text;
+        string city = CityTextBox.Text;
+        string state = StateTextBox.Text;
+        string zipcode = ZipcodeTextBox.Text;
+        string homePhone = HomePhoneTextBox.Text;
+        string workPhone = WorkPhoneTextBox.Text;
+        
+        
 
         Community_AssistEntities db = new Community_AssistEntities();
-        int result = db.usp_Register(email, firstname, lastname, password);
+        int result = db.usp_Register(lastname, firstname, email, password,apartmentNumber,
+            street, city, state, zipcode, homePhone, workPhone);
         if(result != -1)
         {
-            Response.Redirect("Donation.aspx");
+            Response.Redirect("Donation1.aspx");
         }else
         {
             ErrorLabel.Text = "Review your information, something is wrong.";

@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <h2>Invalid Login. Register here first</h2>
+        <h2> Register here</h2>
       <table>
           <tr>
               <td>Email</td>
@@ -45,6 +45,84 @@
                        runat="server"
                        ErrorMessage="Required Field"
                       ControlToValidate="LastNameTextBox">
+
+                  </asp:RequiredFieldValidator></td>
+          </tr>
+           <tr>
+              <td>Apartment Number</td>
+              <td>
+                  <asp:TextBox ID="ApartmentNumberTextBox" runat="server"></asp:TextBox></td>
+              <td>
+                  <asp:RequiredFieldValidator ID="RequiredFieldValidator6"
+                       runat="server"
+                       ErrorMessage="Required Field"
+                      ControlToValidate="ApartmentNumberTextBox">
+
+                  </asp:RequiredFieldValidator></td>
+          </tr>
+           <tr>
+              <td>Street</td>
+              <td>
+                  <asp:TextBox ID="StreetTextBox" runat="server"></asp:TextBox></td>
+              <td>
+                  <asp:RequiredFieldValidator ID="RequiredFieldValidator7"
+                       runat="server"
+                       ErrorMessage="Required Field"
+                      ControlToValidate="StreetTextBox">
+
+                  </asp:RequiredFieldValidator></td>
+          </tr>
+           <tr>
+              <td>City</td>
+              <td>
+                  <asp:TextBox ID="CityTextBox" runat="server"></asp:TextBox></td>
+              <td>
+                  <asp:RequiredFieldValidator ID="RequiredFieldValidator8"
+                       runat="server"
+                       ErrorMessage="Required Field"
+                      ControlToValidate="CityTextBox">
+
+                  </asp:RequiredFieldValidator></td>
+          </tr>
+           <tr>
+              <td>State</td>
+              <td>
+                  <asp:TextBox ID="StateTextBox" runat="server"></asp:TextBox></td>
+              <td>
+                  <asp:RequiredFieldValidator ID="RequiredFieldValidator9"
+                       runat="server"
+                       ErrorMessage="Required Field"
+                      ControlToValidate="StateTextBox">
+
+                  </asp:RequiredFieldValidator></td>
+          </tr>
+           <tr>
+              <td>Zipcode</td>
+              <td>
+                  <asp:TextBox ID="ZipcodeTextBox" runat="server"></asp:TextBox></td>
+              <td>
+                  <asp:RequiredFieldValidator ID="RequiredFieldValidator10"
+                       runat="server"
+                       ErrorMessage="Required Field"
+                      ControlToValidate="ZipcodeTextBox">
+
+                  </asp:RequiredFieldValidator></td>
+          </tr>
+           <tr>
+              <td>Home Phone</td>
+              <td>
+                  <asp:TextBox ID="HomePhoneTextBox" runat="server"></asp:TextBox></td>
+              <td></td>
+          </tr>
+           <tr>
+              <td>Work Phone</td>
+              <td>
+                  <asp:TextBox ID="WorkPhoneTextBox" runat="server"></asp:TextBox></td>
+              <td>
+                  <asp:RequiredFieldValidator ID="RequiredFieldValidator12"
+                       runat="server"
+                       ErrorMessage="Required Field"
+                      ControlToValidate="WorkPhoneTextBox">
 
                   </asp:RequiredFieldValidator></td>
           </tr>
