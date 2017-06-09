@@ -20,26 +20,8 @@
                 <asp:RequiredFieldValidator ID="EmailRequiredFieldValidator" runat="server" ErrorMessage="Required Field!"></asp:RequiredFieldValidator>
             </td>
         </tr>
-        <tr>
-            <td>Select Date</td>
-            <td>
-                <asp:Calendar ID="DateCalendar" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="85px" Width="179px">
-                    <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
-                    <NextPrevStyle VerticalAlign="Bottom" />
-                    <OtherMonthDayStyle ForeColor="#808080" />
-                    <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
-                    <SelectorStyle BackColor="#CCCCCC" />
-                    <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
-                    <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
-                    <WeekendDayStyle BackColor="#FFFFCC" />
-                </asp:Calendar>
-            </td>
-            <td>
-                <asp:RequiredFieldValidator ID="DateRequiredFieldValidator" runat="server" ErrorMessage="Required Field!"></asp:RequiredFieldValidator>
-            </td>
-        </tr>
          <tr>
-            <td>Amount $</td>
+            <td>Amount &nbsp $</td>
             <td>
                 <asp:TextBox ID="AmountTextBox" runat="server"></asp:TextBox>
             </td>
